@@ -2,8 +2,9 @@ name = demo deploy
 description = a site deployment module for a demo D7 site (see http://dcycleproject.org/blog/44/what-site-deployment-module)
 core = 7.x
 
+dependencies[] = devel_generate
 dependencies[] = features
-dependencies[] = views
+dependencies[] = views_ui
 dependencies[] = demo_feature
 
 to_disable[] = comment
