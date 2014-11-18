@@ -1,0 +1,19 @@
+diff --git a/includes/handlers.inc b/includes/handlers.inc
+index 2a33d5d..273171a 100644
+--- a/includes/handlers.inc
++++ b/includes/handlers.inc
+@@ -274,7 +274,13 @@ class views_handler extends views_object {
+       return $title;
+     }
+     $title = ($short && isset($this->definition['title short'])) ? $this->definition['title short'] : $this->definition['title'];
+-    return t('!group: !title', array('!group' => $this->definition['group'], '!title' => $title));
++    if (isset($this->definition['group'])) {
++      $group = $this->definition['group'];
++    }
++    else {
++      $group = t('Unknown group');
++    }
++    return t('!group: !title', array('!group' => $group, '!title' => $title));
+   }
+ 
+   /**

@@ -2387,13 +2387,13 @@ class DrupalWebTestCase extends DrupalTestCase {
    */
   protected function handleForm(&$post, &$edit, &$upload, $submit, $form) {
     // Retrieve the form elements.
-    $elements = $form->xpath('.//input[not(@disabled)]|.//textarea[not(@disabled)]|.//select[not(@disabled)]');
+    $elements = $form->xpath('.//input[not(@disabled)]|.//button[not(@disabled)]|.//textarea[not(@disabled)]|.//select[not(@disabled)]');
     $submit_matches = FALSE;
     foreach ($elements as $element) {
       // SimpleXML objects need string casting all the time.
       $name = (string) $element['name'];
-      // This can either be the type of <input> or the name of the tag itself
-      // for <select> or <textarea>.
+      // This can either be the type of <input> or <button> or the name of the
+      // tag itself for <select> or <textarea>.
       $type = isset($element['type']) ? (string) $element['type'] : $element->getName();
       $value = isset($element['value']) ? (string) $element['value'] : '';
       $done = FALSE;
