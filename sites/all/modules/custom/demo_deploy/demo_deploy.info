@@ -1,0 +1,11 @@
+name = demo deploy
+description = a site deployment module for a demo D7 site (see http://dcycleproject.org/blog/44/what-site-deployment-module)
+core = 7.x
+
+dependencies[] = features
+dependencies[] = views
+dependencies[] = demo_feature
+
+to_disable[] = comment
+; to_disable is not a Drupal core concept, see demo_install.module to see when this is
+; used.

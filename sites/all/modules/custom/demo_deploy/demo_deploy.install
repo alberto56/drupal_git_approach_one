@@ -1,0 +1,35 @@
+<?php
+/**
+ * @file
+ *
+ * Update and install hooks for our D7 site.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function demo_deploy_install() {
+  // Run all update hooks so that an initial install will be functionally
+  // equivalent to an incremental install.
+  for ($i = 7001; $i < 8000; $i++) {
+    $candidate = 'demo_deploy_update_' . $i;
+    if (function_exists($candidate)) {
+      $candidate();
+    }
+  }
+}
+
+/**
+ * Enable our theme
+ */
+function demo_deploy_update_7001() {
+  theme_enable(array('business'));
+  variable_set('theme_default', 'business');
+}
+
+/**
+ * Enable our theme
+ */
+function demo_deploy_update_7002() {
+  _demo_deploy_update_dependencies('demo_deploy');
+}

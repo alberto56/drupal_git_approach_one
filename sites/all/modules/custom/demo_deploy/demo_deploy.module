@@ -1,0 +1,23 @@
+<?php
+/**
+ * @file
+ *
+ * Deployment-related functions
+ */
+
+/**
+ * Update dependencies and disable unwanted modules.
+ *
+ * Prepend with an underscore (_) to avoid confusion with hook_update_dependencies().
+ *
+ * See http://dcycleproject.org/blog/70/updating-dependencies-function
+ */
+function _demo_deploy_update_dependencies($module_name) {
+  $info_file = drupal_parse_info_file(drupal_get_path('module', $module_name) . '/' . $module_name . '.info');
+  if (isset($info_file['dependencies'])) {
+    module_enable($info_file['dependencies']);
+  }
+  if (isset($info_file['to_disable'])) {
+    module_disable($info_file['to_disable']);
+  }
+}
