@@ -30,6 +30,6 @@ function demo_deploy_update_7001() {
 /**
  * Enable our theme
  */
-function demo_deploy_update_7002() {
+function demo_deploy_update_7003() {
   _demo_deploy_update_dependencies('demo_deploy');
 }

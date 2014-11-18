@@ -6,7 +6,9 @@ dependencies[] = devel_generate
 dependencies[] = features
 dependencies[] = views_ui
 dependencies[] = demo_feature
+dependencies[] = pathauto
 
 to_disable[] = comment
+to_disable[] = overlay
 ; to_disable is not a Drupal core concept, see demo_install.module to see when this is
 ; used.
