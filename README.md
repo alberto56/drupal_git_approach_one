@@ -42,20 +42,21 @@ To re-deploy your site from scratch, replacing the current database with a new o
 Approach #2
 -----------
 
-Advantages
+In this approach, we have the following structure:
 
-README.md
-drupal 8
-.gitignore mashed
+    - git root
+    -- Drupal root
+    --- ...
+    -- scripts
+    --- update.sh
+
+For more details, and the advantages of this idea, see README.md at `https://github.com/alberto56/drupal_git_approach_two`.
 
 Approach #3
 -----------
 
+This approach takes the structure of Approach #2 but introduces git submodules.
 
-http://stackoverflow.com/questions/9282998/git-setup-best-practices
+For more details, and the advantages of this idea, see README.md at `https://github.com/alberto56/drupal_git_approach_three`.
 
-Advantages
-
-Code-quality tools and metrics such as gource will
-
-
+/
