@@ -28,8 +28,8 @@ function demo_deploy_update_7001() {
 }
 
 /**
- * Enable our theme
+ * Review dependencies
  */
-function demo_deploy_update_7003() {
+function demo_deploy_update_7004() {
   _demo_deploy_update_dependencies('demo_deploy');
 }

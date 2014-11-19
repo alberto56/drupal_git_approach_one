@@ -1,10 +1,16 @@
 name = demo_feature
 core = 7.x
 package = Features
+dependencies[] = features
+dependencies[] = text
 dependencies[] = views
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
+features[field_base][] = body
+features[field_instance][] = node-faq-body
+features[node][] = faq
+features[views_view][] = faq
 features[views_view][] = gallery
 features_exclude[dependencies][ctools] = ctools
-mtime = 1416348757
+mtime = 1416349061
 project path = sites/all/modules/features
