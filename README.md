@@ -24,7 +24,7 @@ This approach is what most teams I've worked with already do, and is [described 
 
 For the first deployment:
 
-    git clone git@github.com:alberto56/drupal_git_approach_one.git
+    git clone https://github.com/alberto56/drupal_git_approach_one.git
     cd drupal_git_approach_one
     # create your databae
     echo 'create database demo1'|mysql -uroot -proot
@@ -38,6 +38,16 @@ To re-deploy your site from scratch, replacing the current database with a new o
     drush si -y
     drush en demo_deploy -y
     drush generate-content 40
+
+To update from version 1 to version 2, you can do the following:
+
+    git checkout -b version2
+    git pull origin version2
+    sites/all/modules/custom/demo_deploy/scripts/update.sh
+
+If you look at `update.sh`, it contains everything required to update any environment. It is better to put this script under version control rather than in a continuous integration server, because we want to be able to version it. (For some projects the script may change over time.)
+
+Although this approach has the advantage of being simple, we will look at some other approaches which have some advantages.
 
 Approach #2
 -----------
@@ -58,5 +68,3 @@ Approach #3
 This approach takes the structure of Approach #2 but introduces git submodules.
 
 For more details, and the advantages of this idea, see README.md at `https://github.com/alberto56/drupal_git_approach_three`.
-
-/

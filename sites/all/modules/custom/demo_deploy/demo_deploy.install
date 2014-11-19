@@ -28,7 +28,7 @@ function demo_deploy_update_7001() {
 }
 
 /**
- * Review dependencies
+ * Update our dependencies
  */
 function demo_deploy_update_7004() {
   _demo_deploy_update_dependencies('demo_deploy');
