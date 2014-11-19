@@ -28,7 +28,7 @@ function demo_deploy_update_7001() {
 }
 
 /**
- * Enable our theme
+ * Update our dependencies
  */
 function demo_deploy_update_7002() {
   _demo_deploy_update_dependencies('demo_deploy');
